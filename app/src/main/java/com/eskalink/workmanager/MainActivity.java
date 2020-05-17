@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //lansung request worker untuk bekerja
         WorkManager mWorkManager = WorkManager.getInstance(getApplicationContext());
         PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(NotificationWorker.class, 15, TimeUnit.MINUTES).build();
         mWorkManager.enqueue(workRequest);

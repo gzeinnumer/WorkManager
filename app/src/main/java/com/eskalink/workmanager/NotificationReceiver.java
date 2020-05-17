@@ -10,6 +10,7 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
 public class NotificationReceiver extends BroadcastReceiver {
+    //akan di aktifkan ketika notifiasi di kirim, janga lupa daftarkan di manifest
     @Override
     public void onReceive(Context context, Intent intent) {
         WorkManager mWorkManager = WorkManager.getInstance();
