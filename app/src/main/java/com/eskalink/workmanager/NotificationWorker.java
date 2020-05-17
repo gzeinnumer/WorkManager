@@ -18,7 +18,7 @@ public class NotificationWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        showNotification("WorkManager", "Message has been Sent");
+        showNotification("WorkManager kt", "Message has been Sent");
         return Result.success();
     }
 

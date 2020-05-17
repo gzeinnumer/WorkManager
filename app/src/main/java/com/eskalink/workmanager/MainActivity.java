@@ -25,6 +25,5 @@ public class MainActivity extends AppCompatActivity {
         WorkManager mWorkManager = WorkManager.getInstance(getApplicationContext());
         PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(NotificationWorker.class, 15, TimeUnit.MINUTES).build();
         mWorkManager.enqueue(workRequest);
-
     }
 }
