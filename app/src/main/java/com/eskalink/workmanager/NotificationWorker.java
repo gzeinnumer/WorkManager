@@ -4,6 +4,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -15,10 +16,13 @@ public class NotificationWorker extends Worker {
         super(context, workerParams);
     }
 
+    private static final String TAG = "NotificationWorker_";
+
     @NonNull
     @Override
     public Result doWork() {
         showNotification("WorkManager kt", "Message has been Sent");
+        Log.d(TAG, "doWork: kepanggil");
         return Result.success();
     }
 
