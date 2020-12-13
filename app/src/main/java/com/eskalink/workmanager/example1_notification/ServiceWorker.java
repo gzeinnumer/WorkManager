@@ -1,4 +1,4 @@
-package com.eskalink.workmanager;
+package com.eskalink.workmanager.example1_notification;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,8 +11,14 @@ import androidx.core.app.NotificationCompat;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
-public class NotificationWorker extends Worker {
-    public NotificationWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+import com.eskalink.workmanager.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class ServiceWorker extends Worker {
+    public ServiceWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
     }
 
@@ -21,8 +27,11 @@ public class NotificationWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        showNotification("WorkManager kt", "Message has been Sent");
-        Log.d(TAG, "doWork: kepanggil");
+        SimpleDateFormat sdf = new SimpleDateFormat("HHmmss", Locale.getDefault());
+        String currentDateandTime = sdf.format(new Date());
+        showNotification("WorkManager kt", currentDateandTime);
+        Log.d(TAG, "doWork_: kepanggil1");
+
         return Result.success();
     }
 
